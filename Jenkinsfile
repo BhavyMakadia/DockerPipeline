@@ -1,16 +1,7 @@
 pipeline{
-    agent {
-    docker {
-      image 'docker:stable'
-      args '-v /var/run/docker.sock:/var/run/docker.sock'
-    }
-  }
+    agent any
     stages{
-        stage('Build') {
-      steps {
-        sh 'docker build -t my-image .'
-      }
-    }
+        
         stage("checkout"){
             steps {
                 checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'github',url: 'https://github.com/bhavymakadia/DockerPipeline']])
