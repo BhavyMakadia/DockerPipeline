@@ -11,9 +11,9 @@ pipeline{
             steps {
                 script {
                     if (isUnix()) {
-                        sh 'docker build -t bhavymakadia/dockerpipeline .'
+                        sh 'docker build -t bhavya598/dockerpipeline .'
                     } else {
-                        bat 'docker build -t bhavymakadia/dockerpipeline .'
+                        bat 'docker build -t bhavya598/dockerpipeline .'
                     }
                 }
             }
